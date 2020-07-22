@@ -1,29 +1,15 @@
 import React from "react";
-import "./App.css";
-import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Repository from "./components/Repository";
+import Repositories from "./components/Repositories";
 
 function App() {
   return (
-    <ThemeProvider>
-      <CssBaseline />
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    </ThemeProvider>
+    <Router>
+      <Route path="/" component={Home} exact />
+      <Route path="/repositories" component={Repositories} exact />
+    </Router>
   );
 }
 
